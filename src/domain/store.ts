@@ -7,12 +7,9 @@ export type State = {
 export type Subscriber = (state: State) => void;
 
 let state = {
-  username: 'marty',
-  comment: 'test1',
-  commentList: [{
-    username: 'marty',
-    content: 'test2'
-  }]
+  username: '',
+  comment: '',
+  commentList: []
 };
 
 let subscribers: Subscriber[] = [];

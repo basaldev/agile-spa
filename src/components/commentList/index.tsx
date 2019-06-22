@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Typography } from '../typography';
 
 export type Comment = {
+  _id?: string;
   username: string;
   content: string;
 }
@@ -36,10 +37,13 @@ const Comment = styled.td`
 `;
 
 export function CommentList(props: CommentListProps): JSX.Element {
+  if (props.comments.length === 0) {
+    return null;
+  }
   return (
     <StyledTable>
-      {props.comments.map((comment) =>
-        <StyledRow>
+      {props.comments.map((comment, index) =>
+        <StyledRow key={comment._id || index}>
           <Username>
             <Typography content={comment.username} />
           </Username>

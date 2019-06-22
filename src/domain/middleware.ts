@@ -1,6 +1,12 @@
 import { getState } from './store';
 import { updateUsername, updateComment, updateCommentList } from './reducers';
-import { sendComment } from './network';
+import { getComments, sendComment } from './network';
+
+export function onInit(): void {
+  getComments().then(comments => {
+    updateCommentList(comments);
+  });
+}
 
 export function onChangeUsername(username: string): void {
   updateUsername(username);
@@ -15,5 +21,9 @@ export function onSubmitComment(): void {
   const comment = { username: state.username, content: state.comment };
   updateCommentList([...state.commentList, comment]);
   updateComment('');
-  sendComment(comment);
+  sendComment(comment)
+    .then(() => getComments())
+    .then(comments => {
+      updateCommentList(comments);
+    });
 }
