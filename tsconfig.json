@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "paths": {
+      "*": ["*"]
+    },
+    "lib": ["es6", "dom", "esnext"],
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+
+    "moduleResolution": "node",
+    "jsx": "react",
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/**",
+    "**/stories.tsx"
+  ]
+}
