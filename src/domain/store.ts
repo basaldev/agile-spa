@@ -7,21 +7,18 @@ export type State = {
 export type Subscriber = (state: State) => void;
 
 let state = {
-  username: 'marty',
-  comment: 'test1',
-  commentList: [{
-    username: 'marty',
-    content: 'test2'
-  }]
+  username: '',
+  comment: '',
+  commentList: []
 };
 
 let subscribers: Subscriber[] = [];
 
-export function subscribe(subscriber: Subscriber) {
+export function subscribe(subscriber: Subscriber): void {
   subscribers.push(subscriber);
 }
 
-export function emit() {
+export function emit(): void {
   subscribers.forEach(subscriber => subscriber(state));
 }
 
