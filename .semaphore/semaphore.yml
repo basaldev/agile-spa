@@ -13,16 +13,16 @@ blocks:
         - name: npm install
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm i
-            - cache store node-modules-$SEMAPHORE_GIT_BRANCH node_modules
+            - cache store spa-node-modules-$SEMAPHORE_GIT_BRANCH node_modules
   - name: Test
     task:
       jobs:
         - name: npm run lint
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm run lint
   - name: Build
     task:
@@ -30,7 +30,7 @@ blocks:
         - name: npm run build
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm run build
 promotions:
   - name: Stating deploy
