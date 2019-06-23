@@ -7,15 +7,22 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Deploy
+  - name: Staging
     task:
+      secrets:
+        - name: agile-spa
       prologue:
         commands:
           - checkout
           - npm i -g now
           - npm i
       jobs:
+        - name: Test
+          commands:
+            - npm run lint
         - name: Build
           commands:
             - npm run build
+        - name: Deploy
+          commands:
             - now -t ${NOW_TOKEN}
