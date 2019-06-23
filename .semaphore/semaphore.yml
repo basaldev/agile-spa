@@ -22,7 +22,7 @@ blocks:
         - name: npm run lint
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json), node-modules-$SEMAPHORE_GIT_BRANCH, node-modules-master
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
             - npm run lint
   - name: Build
     task:
@@ -30,7 +30,7 @@ blocks:
         - name: npm run build
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json), node-modules-$SEMAPHORE_GIT_BRANCH, node-modules-master
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
             - npm run build
 promotions:
   - name: Stating deploy
