@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Image } from './index';
+import { CommentList } from './index';
 
-storiesOf('Image', module)
+storiesOf('CommentList', module)
   .add('default', () =>
-    <Image src="https://www.fillmurray.com/300/200" width={300} height={200} />
+    <CommentList comments={[
+      { username: 'marty', content: 'this is a comment' },
+      { username: 'marty', content: 'this is a comment' },
+      { username: 'marty', content: 'this is a comment' }
+    ]} />
   );
