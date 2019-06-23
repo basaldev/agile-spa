@@ -1,4 +1,4 @@
-*.test.ts
+*.test.tsx
 stories.tsx
 .storybook/**
 webpack.config.js

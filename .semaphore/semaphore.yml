@@ -24,6 +24,11 @@ blocks:
             - checkout
             - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm run lint
+        - name: npm run test
+          commands:
+            - checkout
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
+            - npm test
   - name: Build
     task:
       jobs:
