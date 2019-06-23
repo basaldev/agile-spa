@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typography render Typography 1`] = `ShallowWrapper {}`;
+exports[`Typography render Typography 1`] = `
+<p>
+  content
+</p>
+`;

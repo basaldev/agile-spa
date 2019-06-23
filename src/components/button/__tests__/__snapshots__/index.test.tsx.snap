@@ -1,3 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button render Button 1`] = `ShallowWrapper {}`;
+exports[`Button render Button 1`] = `
+<styled.button
+  onClick={[MockFunction]}
+>
+  label
+</styled.button>
+`;

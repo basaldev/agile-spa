@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import { Typography } from '../index';
 
 describe('Typography', () => {
@@ -7,6 +8,6 @@ describe('Typography', () => {
       const wrapper = shallow(
         <Typography content="content" />
       );
-      expect(wrapper).toMatchSnapshot();
+      expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

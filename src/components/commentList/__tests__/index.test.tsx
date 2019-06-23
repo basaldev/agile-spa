@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import { CommentList } from '../index';
 
 describe('CommentList', () => {
@@ -7,6 +8,6 @@ describe('CommentList', () => {
       const wrapper = shallow(
         <CommentList comments={[{ username: 'username', content: 'content' }]} />
       );
-      expect(wrapper).toMatchSnapshot();
+      expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import { Button } from '../index';
 
 describe('Button', () => {
@@ -7,6 +8,6 @@ describe('Button', () => {
       const wrapper = shallow(
         <Button label="label" onClick={jest.fn()} />
       );
-      expect(wrapper).toMatchSnapshot();
+      expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
