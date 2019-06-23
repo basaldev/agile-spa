@@ -17,11 +17,11 @@ let state = {
 
 let subscribers: Subscriber[] = [];
 
-export function subscribe(subscriber: Subscriber) {
+export function subscribe(subscriber: Subscriber): void {
   subscribers.push(subscriber);
 }
 
-export function emit() {
+export function emit(): void {
   subscribers.forEach(subscriber => subscriber(state));
 }
 
