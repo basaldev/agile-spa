@@ -30,7 +30,7 @@ blocks:
         - name: npm run build
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
+            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH
             - npm run build
 promotions:
   - name: Stating deploy
