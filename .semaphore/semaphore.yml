@@ -13,21 +13,21 @@ blocks:
         - name: npm install
           commands:
             - checkout
-            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
+            - cache delete spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm i
-            - cache store spa-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json) node_modules
+            - cache store spa-node-modules-$SEMAPHORE_GIT_BRANCH node_modules
   - name: Test
     task:
       jobs:
         - name: npm run lint
           commands:
             - checkout
-            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm run lint
         - name: npm run test
           commands:
             - checkout
-            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm test
   - name: Build
     task:
@@ -35,7 +35,7 @@ blocks:
         - name: npm run build
           commands:
             - checkout
-            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
+            - cache restore spa-node-modules-$SEMAPHORE_GIT_BRANCH
             - npm run build
 promotions:
   - name: Stating deploy
