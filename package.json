@@ -12,7 +12,8 @@
     "build:clean": "rm -rf dist",
     "build:static": "cp -R src/static/** dist",
     "build:js": "webpack --mode=production",
-    "build": "npm run build:clean && npm run build:js && npm run build:static"
+    "build": "npm run build:clean && npm run build:js && npm run build:static",
+    "now-build": "npm run build"
   },
   "author": "Marty <marty@exodev.team>",
   "license": "UNLICENSED",
