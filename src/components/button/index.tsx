@@ -7,7 +7,8 @@ export type ButtonProps = {
 }
 
 const StyledButton = styled.button`
-  font-size: 20px;
+  font-size: 50px;
+  color: red;
 `;
 
 export function Button(props: ButtonProps): JSX.Element {
