@@ -42,16 +42,18 @@ export function CommentList(props: CommentListProps): JSX.Element {
   }
   return (
     <StyledTable>
-      {props.comments.map((comment, index) =>
-        <StyledRow key={comment._id || index}>
-          <Username>
-            <Typography content={comment.username} />
-          </Username>
-          <Comment>
-            <Typography content={comment.content} />
-          </Comment>
-        </StyledRow>
-      )}
+      <tbody>
+        {props.comments.map((comment, index) =>
+          <StyledRow key={comment._id || index}>
+            <Username>
+              <Typography content={comment.username} />
+            </Username>
+            <Comment>
+              <Typography content={comment.content} />
+            </Comment>
+          </StyledRow>
+        )}
+      </tbody>
     </StyledTable>
   );
 }
