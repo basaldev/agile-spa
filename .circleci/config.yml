@@ -8,10 +8,10 @@ jobs:
       - checkout
       - run: npm i
       - save_cache:
-        key: npm-deps-{{ .BuildNum }}
-        paths:
-          - package-lock.json
-          - node_modules
+          key: npm-deps-{{ .BuildNum }}
+          paths:
+            - package-lock.json
+            - node_modules
       - run: npm run lint
   test:
     docker:
