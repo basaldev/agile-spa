@@ -1,4 +1,4 @@
-version: 2.1
+version: 2.0
 
 jobs:
   lint:
@@ -24,8 +24,13 @@ jobs:
       - run: npm run build
 
 workflows:
+  version: 2
   build_and_test:
     jobs:
       - lint
-      - test
-      - build
+      - test:
+          requires:
+            - lint
+      - build:
+          requires:
+            - test
