@@ -19,8 +19,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - npm-deps-{{ .BuildNum }}
+          keys:
+            - npm-deps-{{ .BuildNum }}
       - run: npm test
   build:
     docker:
@@ -28,8 +28,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - npm-deps-{{ .BuildNum }}
+          keys:
+            - npm-deps-{{ .BuildNum }}
       - run: npm run build
 
 workflows:
