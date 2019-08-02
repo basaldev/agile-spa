@@ -2,21 +2,23 @@
 
 exports[`CommentList render CommentList 1`] = `
 <styled.table>
-  <styled.tr
-    key="0"
-  >
-    <styled.th>
-      <Typography
-        content="username"
-        type="p"
-      />
-    </styled.th>
-    <styled.td>
-      <Typography
-        content="content"
-        type="p"
-      />
-    </styled.td>
-  </styled.tr>
+  <tbody>
+    <styled.tr
+      key="0"
+    >
+      <styled.th>
+        <Typography
+          content="username"
+          type="p"
+        />
+      </styled.th>
+      <styled.td>
+        <Typography
+          content="content"
+          type="p"
+        />
+      </styled.td>
+    </styled.tr>
+  </tbody>
 </styled.table>
 `;
